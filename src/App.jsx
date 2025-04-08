@@ -6,6 +6,7 @@ import ActivityPage from "./components/Activities/ActivityPage";
 import PackagePage from "./components/Packages/PackagesPage";
 import VehicleRental from "./components/VechileRentals/VechileRental";
 import CarRentalPage from "./components/VechileRentals/Car";
+import ScootyRentalPage from "./components/VechileRentals/Scotty";
 import StayDetailPage from "./components/Stays/StayDetail";
 
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
       {/* <Route path="/stays" element={<Stays />} /> */}
       <Route path="/stays/:staysId" element={<StayDetailPage />} />
       <Route path="/rentals" element={<VehicleRental />} />
-      <Route path="/rentals/:rentalsId" element={<CarRentalPage />} />
+      <Route path="/rentals/car" element={<CarRentalPage />} />
+      <Route path="/rentals/bike" element={<ScootyRentalPage />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="/packages/:packagesId" element={<PackagePage />} />
       <Route path="/activity" element={<Activity />} />

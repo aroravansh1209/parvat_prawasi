@@ -47,13 +47,13 @@ export default function VehicleRental() {
             <VehicleCard
               title="Cars"
               description="Explore the city on four wheels"
-              link="/rentals/bike"
+              link="/rentals/car"
               image={vehical1}
             />
             <VehicleCard
               title="Bike/Sccoty"
               description="Zip around town with ease"
-              link="/rentals/scooty"
+              link="/rentals/bike"
               image={vehical4}
             />
           </div>
