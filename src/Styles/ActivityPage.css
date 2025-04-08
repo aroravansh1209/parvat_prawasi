@@ -1,0 +1,261 @@
+.activityPage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.activityPage-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.activityPage-header {
+  margin-bottom: 24px;
+}
+
+.activityPage-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.activityPage-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.activityPage-meta div {
+  display: flex;
+  gap: 8px;
+}
+
+.activityPage-star-icon,
+.activityPage-clock-icon,
+.activityPage-map-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.activityPage-tabs {
+  margin-top: 32px;
+}
+
+.activityPage-tabs-list {
+  display: flex;
+  gap: 20px;
+}
+
+.activityPage-tab-trigger {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.activityPage-tab-content {
+  margin-top: 16px;
+}
+
+.activityPage-restrictions-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.activityPage-restrictions-list {
+  list-style: disc inside;
+}
+
+.activityPage-includes-list,
+.activityPage-safety-list {
+  display: grid;
+  gap: 12px;
+}
+
+.activityPage-includes-item,
+.activityPage-safety-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activityPage-shield-icon {
+  width: 16px;
+  height: 16px;
+  color: #38a169;
+}
+
+.activityPage-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.activityPage-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activityPage-card-content {
+  padding: 24px;
+}
+
+.activityPage-price {
+  margin-bottom: 24px;
+}
+
+.activityPage-price-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.activityPage-price-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.activityPage-badge {
+  background-color: #e53e3e;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 12px;
+}
+
+.activityPage-price-original {
+  font-size: 1rem;
+  color: gray;
+}
+
+.activityPage-price-strike {
+  text-decoration: line-through;
+}
+
+.activityPage-booking-link {
+  text-decoration: none;
+}
+
+.activityPage-booking-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #38a169;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.activityPage-booking-button:hover {
+  background-color: #2f855a;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  /* Grid Layout: Switch to a single column layout */
+  .activityPage-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  /* Adjust Title Font Size */
+  .activityPage-title {
+    font-size: 1.75rem;
+  }
+
+  /* Meta Info Adjustments */
+  .activityPage-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Tabs Layout */
+  .activityPage-tabs-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Card Content Padding */
+  .activityPage-card-content {
+    padding: 16px;
+  }
+
+  /* Price Adjustment */
+  .activityPage-price-value {
+    font-size: 1.25rem;
+  }
+
+  /* Price Information Layout */
+  .activityPage-price-info {
+    flex-direction: column;
+  }
+
+  /* Booking Button Font Size */
+  .activityPage-booking-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* List Styling Adjustments */
+  .activityPage-includes-list,
+  .activityPage-safety-list {
+    grid-template-columns: 1fr; /* Stack lists vertically */
+  }
+
+  /* Restriction List Styling */
+  .activityPage-restrictions-list {
+    list-style-position: inside;
+  }
+
+  /* Sidebar Adjustments */
+  .activityPage-sidebar {
+    gap: 16px;
+  }
+
+  /* Move the Booking Button Above Customer Reviews */
+  .activityPage-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .activityPage-booking-button {
+    order: -1; /* Move the booking button above the reviews */
+  }
+
+  .activityPage-restrictions-title {
+    order: 1; /* Keep other sections in their natural order */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further responsive adjustments for small screens */
+  .activityPage-title {
+    font-size: 1.5rem;
+  }
+
+  .activityPage-meta {
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .activityPage-price-value {
+    font-size: 1.125rem;
+  }
+
+  .activityPage-booking-button {
+    font-size: 0.875rem;
+    padding: 8px;
+  }
+
+  .activityPage-card-content {
+    padding: 12px;
+  }
+
+  /* Ensure booking button is above other content on small screens */
+  .activityPage-booking-button {
+    order: -1;
+  }
+}

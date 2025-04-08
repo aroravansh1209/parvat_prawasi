@@ -1,0 +1,26 @@
+.date-time-picker {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-time-picker label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  .date-time-picker input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .date-time-picker input:focus {
+    outline: none;
+    border-color: #2a2356;
+    box-shadow: 0 0 0 3px rgba(42, 35, 86, 0.1);
+  }
+  
+  

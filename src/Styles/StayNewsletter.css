@@ -1,0 +1,147 @@
+.StawNewsletter {
+    background-color: #3b82f6;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .StawNewsletter .container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .StawNewsletter .heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .StawNewsletter .subheading {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+  
+  .StawNewsletter .form {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .StawNewsletter .input-group {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .StawNewsletter .email-input {
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  .StawNewsletter .email-input:focus {
+    border-color: #93c5fd;
+  }
+  
+  .StawNewsletter .subscribe-button {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: white;
+    color: #3b82f6;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .StawNewsletter .subscribe-button:hover {
+    background-color: #f1f5f9;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .StawNewsletter .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .StawNewsletter .heading {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .StawNewsletter .subheading {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .StawNewsletter .form {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  
+    .StawNewsletter .input-group {
+      flex-direction: column; /* Stack the input and button */
+      gap: 0.5rem;
+    }
+  
+    .StawNewsletter .email-input {
+      font-size: 0.875rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  
+    .StawNewsletter .subscribe-button {
+      font-size: 0.875rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      width: 100%; /* Make button take full width on small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .StawNewsletter .heading {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .StawNewsletter .subheading {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  
+    .StawNewsletter .email-input {
+      font-size: 0.875rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  
+    .StawNewsletter .subscribe-button {
+      font-size: 0.875rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+  

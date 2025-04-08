@@ -1,0 +1,50 @@
+/* HomePage.css */
+
+/* Global styles for the page */
+.packages-home-page {
+    min-height: 100vh;
+  }
+  
+  /* Section for destinations */
+  .packages-destinations-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .packages-section-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid styles for destinations */
+  .packages-destination-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  }
+  
+  /* Add custom styles for individual components
+  .packages-popular-activities,
+  .packages-testimonials,
+  .packages-newsletter-signup,
+  .packages-footer {}
+    /* You can add individual styles for these components here */
+  
+  /* Optional: Define more styles or breakpoints for responsiveness */
+  @media (max-width: 768px) {
+    .packages-destination-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .packages-destination-grid {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+  }
+  

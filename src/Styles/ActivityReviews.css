@@ -1,0 +1,92 @@
+.ActivityReviews-container {
+    padding: 2rem;
+  }
+  
+  .ActivityReviews-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .ActivityReviews-review {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ActivityReviews-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .ActivityReviews-avatarContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ActivityReviews-avatar {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+  
+  .ActivityReviews-avatarImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .ActivityReviews-avatarFallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #d1d5db;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+  
+  .ActivityReviews-authorDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ActivityReviews-authorName {
+    font-weight: bold;
+  }
+  
+  .ActivityReviews-date {
+    font-size: 0.875rem;
+    color: #6b7280; /* gray color */
+  }
+  
+  .ActivityReviews-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ActivityReviews-star {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.25rem;
+    color: #d1d5db; /* empty star color */
+  }
+  
+  .ActivityReviews-starFilled {
+    color: #fbbf24; /* yellow color */
+  }
+  
+  .ActivityReviews-starEmpty {
+    color: #e5e7eb; /* gray color */
+  }
+  
+  .ActivityReviews-content {
+    color: #374151; /* text-gray-700 */
+    margin-top: 1rem;
+  }
+  

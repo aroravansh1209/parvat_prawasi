@@ -1,0 +1,70 @@
+/* HeroSection.css */
+
+/* Container for the hero section */
+.packageHero-container {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Background image for the hero section */
+  .packageHero-image {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Dark overlay to make text stand out */
+  .packageHero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.5;
+  }
+  
+  /* Content inside the hero section */
+  .packageHero-content {
+    position: relative;
+    z-index: 10;
+    space-y: 16px;
+  }
+  
+  /* Hero title styling */
+  .packageHero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Description text styling */
+  .packageHero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Button styling */
+  .packageHero-button {
+    background-color: #0077B6; /* Custom button color */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .packageHero-button:hover {
+    background-color: #023e8a; /* Button hover effect */
+  }
+  

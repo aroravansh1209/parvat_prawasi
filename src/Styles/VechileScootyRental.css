@@ -1,0 +1,109 @@
+/* Scotty.css */
+.Scotty-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Scotty-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.Scotty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.Scotty-card {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.Scotty-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Scotty-card-content {
+  padding: 20px;
+}
+
+.Scotty-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.Scotty-card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.Scotty-description {
+  font-size: 0.875rem;
+  color: #6c6c6c;
+  margin-top: 8px;
+}
+
+.Scotty-dialog {
+  display: none;
+}
+
+.Scotty-dialog-content {
+  max-width: 425px;
+  padding: 20px;
+}
+
+.Scotty-dialog-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.Scotty-grid-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.Scotty-label {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.Scotty-separator {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+}
+
+.Scotty-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Scotty-input {
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.Scotty-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Scotty-button:hover {
+  background-color: #0056b3;
+}

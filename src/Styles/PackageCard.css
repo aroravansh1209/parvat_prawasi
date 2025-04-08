@@ -1,0 +1,131 @@
+/* Card container */
+.PackageCard-container {
+  overflow: hidden;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Image container for the package */
+.PackageCard-image-container {
+  position: relative;
+  height: 12rem; /* 48px */
+  overflow: hidden;
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+/* Image inside the container */
+.PackageCard-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for image */
+.PackageCard-image:hover {
+  transform: scale(1.05);
+}
+
+/* Badge for duration */
+.PackageCard-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #ff7c00;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+
+/* Content inside the card */
+.PackageCard-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Title of the package */
+.PackageCard-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Description text */
+.PackageCard-description {
+  font-size: 0.875rem;
+  color: #4a4a4a;
+}
+
+/* Rating section */
+.PackageCard-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Star rating icons */
+.PackageCard-star-rating {
+  display: flex;
+}
+
+/* Star icon styles */
+.PackageCard-star {
+  width: 1rem;
+  height: 1rem;
+  color: #d1d5db; /* muted color for stars */
+}
+
+/* Filled star color */
+.PackageCard-star-filled {
+  fill: #ff7c00;
+  color: #ff7c00;
+}
+
+/* Muted star color */
+.PackageCard-star-muted {
+  fill: #e5e7eb;
+  color: #e5e7eb;
+}
+
+/* Rating value */
+.PackageCard-rating-value {
+  font-size: 0.875rem;
+  color: #4a4a4a;
+}
+
+/* Price container and button */
+.PackageCard-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Price text */
+.PackageCard-price {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+/* Button styles */
+.PackageCard-button {
+  background-color: #ff7c00;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.PackageCard-button:hover {
+  background-color: #e86500; /* Darker shade for button on hover */
+}
+
+/* Link for the "View Details" */
+.PackageCard-link {
+  text-decoration: none;
+}

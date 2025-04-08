@@ -1,0 +1,90 @@
+.cruiseHero-container {
+    position: relative;
+    margin-bottom: 48px;
+  }
+  
+  .cruiseHero-image-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .cruiseHero-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+  }
+  
+  .cruiseHero-content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 128px 16px 32px;
+    text-align: center;
+    color: white;
+  }
+  
+  .cruiseHero-heading {
+    margin-bottom: 24px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .cruiseHero-subheading {
+    margin-bottom: 32px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .cruiseHero-search-container {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .cruiseHero-input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: border 0.3s;
+  }
+  
+  .cruiseHero-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .cruiseHero-input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .cruiseHero-button {
+    background-color: #fb923c; /* Orange color */
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .cruiseHero-button:hover {
+    background-color: #f97316; /* Darker orange on hover */
+  }
+  
+  .cruiseHero-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
