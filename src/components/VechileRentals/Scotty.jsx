@@ -35,7 +35,7 @@ export default function BikeRentalPage() {
       const start = new Date(pickupDate);
       const end = new Date(returnDate);
       const diffTime = end - start;
-      const diffDays = Math.ceil(diffTime / (700 * 60 * 60 * 24));
+      const diffDays = Math.ceil(diffTime / (1000   * 60 * 60 * 24));
 
       if (diffDays < 0) {
         alert("Return date must be after pickup date.");
@@ -51,7 +51,7 @@ export default function BikeRentalPage() {
 
         const options = {
           key: "rzp_test_LpWFumLwrNuZX3",
-          amount: 1000 * diffDays * 100,
+          amount: 700 * diffDays * 100,
           currency: "INR",
           name: "ParvatPrawasi",
           description: "Thank you for shopping with us",
