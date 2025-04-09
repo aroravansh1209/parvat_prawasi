@@ -5,32 +5,30 @@ import Footer from "../Footer";
 import Vechile1 from "../../assets/Vechile1.jpg";
 import Vechile2 from "../../assets/Vechile2.jpg";
 import Vechile3 from "../../assets/Vechile3.jpg";
-import logo from '../../assets/logo.jpeg'
+import logo from '../../assets/logo.jpeg';
 
 export default function CarRentalPage() {
   const [pickupDate, setPickupDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
 
-
   const loadScript = async (url) => {
-        return new Promise((resolve) => {
-          const script = document.createElement("script");
-          script.src = url;
-    
-          script.onload = () => {
-            resolve(true);
-          };
-    
-          script.onerror = () => {
-            resolve(false);
-          };
-    
-          document.body.appendChild(script);
-        });
-      };
-    
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = url;
 
-  const handleSubmit = async(e) => {
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (pickupDate && returnDate) {
@@ -42,46 +40,30 @@ export default function CarRentalPage() {
       if (diffDays < 0) {
         alert("Return date must be after pickup date.");
       } else {
-       
         const res = await loadScript(
           "https://checkout.razorpay.com/v1/checkout.js"
         );
-  
+
         if (!res) {
-          alert("Razorpay SDK failed to load, check you connection", "error");
+          alert("Razorpay SDK failed to load, check your connection", "error");
           return;
         }
-  
+
         const options = {
           key: "rzp_test_LpWFumLwrNuZX3",
-          amount: (1000 * diffDays) * 100,
+          amount: 1000 * diffDays * 100,
           currency: "INR",
           name: "ParvatPrawasi",
           description: "Thank you for shopping with us",
           image: logo,
           handler: function (response) {
             console.log(response);
-            toast.success("Order Placed", {
-              position: "bottom-right",
-              autoClose: 1000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-            });
-  
-            setCartItems(() => []);
-            setTotalPrice(0);
-            setTotalDiscount(0);
-  
-            navigate("/");
+            alert("Order Placed Successfully!");
           },
           prefill: {
-            name: `vansh`,
-            email: 'vansh@gmail.com',
-            contact: "8946895151",
+            name: "vansh",
+            email: "vansh@gmail.com",
+            contact: "8000452773",
           },
           theme: {
             color: "#392F5A",
@@ -108,7 +90,17 @@ export default function CarRentalPage() {
               <CarCard name="Gypsy" description="Unleash the Ride, Anytime, Anywhere." imageSrc={Vechile3} />
             </div>
 
-            {/* ... Rental Conditions & Pricing cards ... */}
+            <div className="car-terms">
+              <h3 className="car-terms-title">Rental Terms and Conditions</h3>
+              <ul className="car-terms-list">
+                <li>All drivers must hold a valid driver's license and be at least 21 years old.</li>
+                <li>A refundable security deposit is required at the time of pickup.</li>
+                <li>The vehicle must be returned with a full tank of fuel.</li>
+                <li>Late returns will incur additional charges on a per-hour basis.</li>
+                <li>Rented vehicles are for personal use only and not for commercial purposes.</li>
+                <li>Any damage to the vehicle during the rental period must be reported immediately.</li>
+              </ul>
+            </div>
           </div>
 
           <div className="car-booking-form">

@@ -33,6 +33,74 @@
           "child": 2999,
           "infant": 0
         }
+      },
+      {
+        "id": "goa",
+        "name": "Goa",
+        "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
+        "image": "/goapackage.jpg",
+        "rating": 5,
+        "currentPrice": 5999,
+        "originalPrice": 8000,
+        "tourOptions": ["City Tour", "Beach Tour", "Historical Sites"],
+        "inclusions": ["Hotel accommodation", "Daily breakfast", "Airport transfers", "Sightseeing as per itinerary"],
+        "timings": {
+          "departure": "09:00 AM",
+          "return": "06:00 PM"
+        },
+        "itinerary": [
+          {
+            "day": 1,
+            "activities": ["Arrival and check-in to hotel", "Welcome dinner at a local restaurant"]
+          },
+          {
+            "day": 2,
+            "activities": ["Beach hopping tour", "Water sports activities (optional)"]
+          },
+          {
+            "day": 3,
+            "activities": ["Visit to Old Goa churches", "Spice plantation tour"]
+          }
+        ],
+        "pricing": {
+          "adult": 5999,
+          "child": 2999,
+          "infant": 0
+        }
+      },
+      {
+        "id": "goa",
+        "name": "Goa",
+        "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
+        "image": "/goapackage.jpg",
+        "rating": 5,
+        "currentPrice": 5999,
+        "originalPrice": 8000,
+        "tourOptions": ["City Tour", "Beach Tour", "Historical Sites"],
+        "inclusions": ["Hotel accommodation", "Daily breakfast", "Airport transfers", "Sightseeing as per itinerary"],
+        "timings": {
+          "departure": "09:00 AM",
+          "return": "06:00 PM"
+        },
+        "itinerary": [
+          {
+            "day": 1,
+            "activities": ["Arrival and check-in to hotel", "Welcome dinner at a local restaurant"]
+          },
+          {
+            "day": 2,
+            "activities": ["Beach hopping tour", "Water sports activities (optional)"]
+          },
+          {
+            "day": 3,
+            "activities": ["Visit to Old Goa churches", "Spice plantation tour"]
+          }
+        ],
+        "pricing": {
+          "adult": 5999,
+          "child": 2999,
+          "infant": 0
+        }
       }
     ]
   }

@@ -2,15 +2,15 @@ import { Card, CardContent, CardActions, CardMedia, Typography } from "@mui/mate
 import Badge from "@mui/material/Badge";
 import Button from "@mui/material/Button";
 import { Star } from "lucide-react";
-import activity from "../../assets/Activity5.avif"
+import activity from "../../assets/Activity5.avif";
 
 import "../../Styles/Activities.css";
 
 // This would typically come from an API
 const activities = [
   {
-    id: "scuba-1",
-    title: "Grand Island Scuba Diving with Free Videography",
+    id: "para-1",
+    title: "Para Gliding",
     image: activity,
     discount: 25,
     rating: 4.9,
@@ -30,18 +30,23 @@ export function Activities() {
         <Card key={activity.id} sx={{ maxWidth: 345, marginBottom: "16px" }}>
           {/* Image and Badge */}
           <div style={{ position: "relative" }}>
-            <Badge
-              badgeContent={`${activity.discount}% OFF`}
-              color="error"
-              sx={{
+            <div
+              style={{
                 position: "absolute",
-                top: 8,
-                left: 8,
-                fontWeight: "bold",
+                top: "8px",
+                left: "8px",
+                zIndex: 10,
                 backgroundColor: "#E07C54",
                 color: "white",
+                fontWeight: "bold",
+                padding: "4px 12px",
+                borderRadius: "0.25rem",
+                fontSize: "0.875rem",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
               }}
-            />
+            >
+              {`${activity.discount}% OFF`}
+            </div>
             <CardMedia
               component="img"
               image={activity.image || "/placeholder.svg"}

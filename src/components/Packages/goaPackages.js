@@ -7,7 +7,7 @@ export const goaPackages = [
     duration: "4 Days / 3 Nights",
     description: "Immerse yourself in the sun, sand, and sea with our Beach Bliss package.",
     image: "/packages/beach-bliss.jpg",
-    price: 15999,
+    price: 5999,
     rating: 4.5,
     highlights: [
       "Relax on the pristine beaches of Baga and Calangute",
