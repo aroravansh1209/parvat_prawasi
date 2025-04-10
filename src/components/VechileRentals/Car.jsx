@@ -6,10 +6,15 @@ import Vechile1 from "../../assets/Vechile1.jpg";
 import Vechile2 from "../../assets/Vechile2.jpg";
 import Vechile3 from "../../assets/Vechile3.jpg";
 import logo from '../../assets/logo.jpeg';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../config";
+import { useNavigate } from "react-router-dom";
 
 export default function CarRentalPage() {
   const [pickupDate, setPickupDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
+  const navigate = useNavigate();
+
 
   const loadScript = async (url) => {
     return new Promise((resolve) => {
@@ -31,50 +36,56 @@ export default function CarRentalPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (pickupDate && returnDate) {
-      const start = new Date(pickupDate);
-      const end = new Date(returnDate);
-      const diffTime = end - start;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-      if (diffDays < 0) {
-        alert("Return date must be after pickup date.");
-      } else {
-        const res = await loadScript(
-          "https://checkout.razorpay.com/v1/checkout.js"
-        );
-
-        if (!res) {
-          alert("Razorpay SDK failed to load, check your connection", "error");
-          return;
-        }
-
-        const options = {
-          key: "rzp_test_LpWFumLwrNuZX3",
-          amount: 1000 * diffDays * 100,
-          currency: "INR",
-          name: "ParvatPrawasi",
-          description: "Thank you for shopping with us",
-          image: logo,
-          handler: function (response) {
-            console.log(response);
-            alert("Order Placed Successfully!");
-          },
-          prefill: {
-            name: "vansh",
-            email: "vansh@gmail.com",
-            contact: "8000452773",
-          },
-          theme: {
-            color: "#392F5A",
-          },
-        };
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
-      }
-    } else {
-      alert("Please select both dates.");
-    }
+    onAuthStateChanged(auth, async(user) => {
+          if (!user) {
+            navigate("/login") // 👈 redirect to home if not logged in
+          }else{
+            if (pickupDate && returnDate) {
+              const start = new Date(pickupDate);
+              const end = new Date(returnDate);
+              const diffTime = end - start;
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+              if (diffDays < 0) {
+                alert("Return date must be after pickup date.");
+              } else {
+                const res = await loadScript(
+                  "https://checkout.razorpay.com/v1/checkout.js"
+                );
+        
+                if (!res) {
+                  alert("Razorpay SDK failed to load, check your connection", "error");
+                  return;
+                }
+        
+                const options = {
+                  key: "rzp_test_LpWFumLwrNuZX3",
+                  amount: 1000 * diffDays * 100,
+                  currency: "INR",
+                  name: "ParvatPrawasi",
+                  description: "Thank you for shopping with us",
+                  image: logo,
+                  handler: function (response) {
+                    console.log(response);
+                    alert("Order Placed Successfully!");
+                  },
+                  prefill: {
+                    name: "vansh",
+                    email: "vansh@gmail.com",
+                    contact: "8000452773",
+                  },
+                  theme: {
+                    color: "#392F5A",
+                  },
+                };
+                const paymentObject = new window.Razorpay(options);
+                paymentObject.open();
+              }
+            } else {
+              alert("Please select both dates.");
+            }
+          }
+        })
   };
 
   return (

@@ -2,7 +2,10 @@ import styled from "styled-components";
 import logo from "../assets/logo.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../config";
+import { useNavigate } from "react-router-dom";
 
 // Styled Components MUST come before using them
 const Nav = styled.nav`
@@ -147,6 +150,38 @@ const ResponsiveNav = styled.div`
 
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState(false);
+  const [isLogedIn, setIsLogedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        setIsLogedIn(false)
+      }else{
+        setIsLogedIn(true)
+      }
+    })
+
+    return () => unsubscribe()
+  }, [])
+
+
+  const handleLogout = async () => {
+    const unsubscribe = onAuthStateChanged(auth,async (user) => {
+      if (!user) {
+        navigate('/login')
+      }else{
+        try {
+          await signOut(auth)
+          setIsLogedIn(false)
+          window.location.reload();
+        } catch (error) {
+          console.error("Logout Error:", error)
+        }
+      }
+    })
+    
+  }
 
   return (
     <>
@@ -179,7 +214,9 @@ export default function Navbar() {
           </li>
         </ul>
         <div className="login-button">
-          <button>Sign In</button>
+          <button onClick={()=>handleLogout()}>{
+            isLogedIn ? "Log Out" : "Sign In"
+            }</button>
         </div>
       </Nav>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, MapPin, Star, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom'; // For regular React Router
+import { Link, useNavigate } from 'react-router-dom'; // For regular React Router
 import '../../Styles/ActivityPage.css'; // Updated path for regular CSS
 import { ActivityImageSection } from './ActivityImageSection';
 import { ActivityReview } from './ActivityReview';
@@ -8,9 +8,14 @@ import { ActivityRelatedActivities } from './ActivityRelatedActivities';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import logo from "../../assets/logo.jpeg";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../config';
 
 
 export default function ActivityPage({ params }) {
+
+  const navigate = useNavigate();
+
   const activity = {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
@@ -111,6 +116,10 @@ export default function ActivityPage({ params }) {
     };
   
     const handleClick=async()=>{
+      onAuthStateChanged(auth, async(user) => {
+        if (!user) {
+          navigate("/login") // 👈 redirect to home if not logged in
+        }else{
           const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
           );
@@ -157,6 +166,8 @@ export default function ActivityPage({ params }) {
           };
           const paymentObject = new window.Razorpay(options);
           paymentObject.open();
+        }
+      })
     }
 
   return (

@@ -17,6 +17,7 @@
     "@mui/styled-engine": "^6.4.3",
     "@mui/x-date-pickers": "^7.27.0",
     "date-fns": "^4.1.0",
+    "firebase": "^11.6.0",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-datepicker": "^8.1.0",

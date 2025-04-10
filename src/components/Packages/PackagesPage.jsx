@@ -2,10 +2,12 @@ import React,{ useState, useEffect } from "react";
 import { goaPackages } from "../Packages/goaPackages"; // Adjust path if necessary
 import { Star, Check } from "lucide-react";
 import "../../Styles/PackagePage.css"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import logo from "../../assets/logo.jpeg";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../config";
 
 
 export async function generateStaticParams() {
@@ -17,6 +19,7 @@ export async function generateStaticParams() {
 export default function PackagePage() {
   const {packagesId} = useParams();
   const pkg = goaPackages.find((p) => p.id === packagesId);
+  const navigate = useNavigate();
 
   if (!pkg) {
     // If package is not found, you can handle it using React router's `Redirect` or custom 404 logic
@@ -42,52 +45,58 @@ export default function PackagePage() {
   };
 
   const handleClick=async()=>{
-        const res = await loadScript(
-          "https://checkout.razorpay.com/v1/checkout.js"
-        );
-  
-        if (!res) {
-          alert("Razorpay SDK failed to load, check you connection", "error");
-          return;
-        }
-  
-        const options = {
-          key: "rzp_test_LpWFumLwrNuZX3",
-          amount: (pkg.price) * 100,
-          currency: "INR",
-          name: "ParvatPrawasi",
-          description: "Thank you for shopping with us",
-          image: logo,
-          handler: function (response) {
-            console.log(response);
-            toast.success("Order Placed", {
-              position: "bottom-right",
-              autoClose: 1000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-            });
-  
-            setCartItems(() => []);
-            setTotalPrice(0);
-            setTotalDiscount(0);
-  
-            navigate("/");
-          },
-          prefill: {
-            name: `vansh`,
-            email: 'vansh@gmail.com',
-            contact: "8946895151",
-          },
-          theme: {
-            color: "#392F5A",
-          },
-        };
-        const paymentObject = new window.Razorpay(options);
-        paymentObject.open();
+        onAuthStateChanged(auth, async(user) => {
+          if (!user) {
+            navigate("/login") // 👈 redirect to home if not logged in
+          }else{
+            const res = await loadScript(
+              "https://checkout.razorpay.com/v1/checkout.js"
+            );
+      
+            if (!res) {
+              alert("Razorpay SDK failed to load, check you connection", "error");
+              return;
+            }
+      
+            const options = {
+              key: "rzp_test_LpWFumLwrNuZX3",
+              amount: (pkg.price) * 100,
+              currency: "INR",
+              name: "ParvatPrawasi",
+              description: "Thank you for shopping with us",
+              image: logo,
+              handler: function (response) {
+                console.log(response);
+                toast.success("Order Placed", {
+                  position: "bottom-right",
+                  autoClose: 1000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                });
+      
+                setCartItems(() => []);
+                setTotalPrice(0);
+                setTotalDiscount(0);
+      
+                navigate("/");
+              },
+              prefill: {
+                name: `vansh`,
+                email: 'vansh@gmail.com',
+                contact: "8946895151",
+              },
+              theme: {
+                color: "#392F5A",
+              },
+            };
+            const paymentObject = new window.Razorpay(options);
+            paymentObject.open();
+          }
+        })
   }
 
   return (

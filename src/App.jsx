@@ -8,6 +8,7 @@ import VehicleRental from "./components/VechileRentals/VechileRental";
 import CarRentalPage from "./components/VechileRentals/Car";
 import ScootyRentalPage from "./components/VechileRentals/Scotty";
 import StayDetailPage from "./components/Stays/StayDetail";
+import Login from './components/Login';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <Route path="/packages/:packagesId" element={<PackagePage />} />
       <Route path="/activity" element={<Activity />} />
       <Route path="/activity/:activityId" element={<ActivityPage />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
