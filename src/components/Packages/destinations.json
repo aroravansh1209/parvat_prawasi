@@ -1,7 +1,7 @@
 {
     "destinations": [
       {
-        "id": "goa",
+        "id": "beach-bliss",
         "name": "Goa",
         "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
         "image": "/goapackage.jpg",
@@ -35,7 +35,7 @@
         }
       },
       {
-        "id": "goa",
+        "id": "cultural-explorer",
         "name": "Goa",
         "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
         "image": "/goapackage.jpg",
@@ -69,7 +69,7 @@
         }
       },
       {
-        "id": "goa",
+        "id": "adventure-seeker",
         "name": "Goa",
         "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
         "image": "/goapackage.jpg",

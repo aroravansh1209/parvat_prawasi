@@ -51,7 +51,7 @@ export function PackagesDestinationCard({
             ₹{originalPrice.toLocaleString()}
           </span>
         </div>
-        <a href={`/packages/beach-bliss`} className="packagedestination-view-details">
+        <a href={`/packages/${id}`} className="packagedestination-view-details">
           <button className="packagedestination-view-details-button">View Details</button>
         </a>
       </div>
