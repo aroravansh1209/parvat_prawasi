@@ -23,12 +23,11 @@ export default function ActivityPage({ params }) {
   const [activity, setActivity] = useState([]);
 
   const data = [{
-    id: 'para-3',
-    title: 'Grand Island Scuba Diving with Free Videography',
+    id: 'para-1',
+    title: 'Bungee Jumping',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
     image: activity1,
-    images: [activity1],
     discount: 25,
     rating: 4.9,
     reviews: 554,
@@ -36,7 +35,6 @@ export default function ActivityPage({ params }) {
     persons: 1,
     price: 3749,
     originalPrice: 4999,
-    category: 'Scuba Diving',
     safetyMeasures: [
       'Certified instructors',
       'Quality equipment',
@@ -52,8 +50,8 @@ export default function ActivityPage({ params }) {
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
   },
   {
-    id: 'scuba-2',
-    title: 'Grand Island Scuba Diving with Free Videography',
+    id: 'para-2',
+    title: 'Para Gliding',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
     image: activity2,
@@ -81,12 +79,12 @@ export default function ActivityPage({ params }) {
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
   },
   {
-    id: 'scuba-1',
-    title: 'Grand Island Scuba Diving with Free Videography',
+    id: 'para-3',
+    title: 'Treking',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
-    image: activity1,
-    images: [activity1],
+    image: activity3,
+    images: [activity3],
     discount: 25,
     rating: 4.9,
     reviews: 554,
@@ -110,12 +108,12 @@ export default function ActivityPage({ params }) {
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
   },
   {
-    id: 'scuba-1',
-    title: 'Grand Island Scuba Diving with Free Videography',
+    id: 'para-4',
+    title: 'River Rafting',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
-    image: activity1,
-    images: [activity1],
+    image: activity4,
+    images: [activity4],
     discount: 25,
     rating: 4.9,
     reviews: 554,
@@ -139,12 +137,12 @@ export default function ActivityPage({ params }) {
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
   },
   {
-    id: 'scuba-1',
+    id: 'para-5',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
-    image: activity1,
-    images: [activity1],
+    image: activity5,
+    images: [activity5],
     discount: 25,
     rating: 4.9,
     reviews: 554,
@@ -168,12 +166,12 @@ export default function ActivityPage({ params }) {
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
   },
   {
-    id: 'scuba-1',
+    id: 'para-6',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
-    image: activity1,
-    images: [activity1],
+    image: activity6,
+    images: [activity6],
     discount: 25,
     rating: 4.9,
     reviews: 554,
