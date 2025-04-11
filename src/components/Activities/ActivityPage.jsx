@@ -347,7 +347,7 @@ export default function ActivityPage({ params }) {
           </div>
 
           {
-            activity.length ? <ActivityImageSection images={activity.images} title={activity.title} /> : ''
+            activity.length === 0 ? '' : <ActivityImageSection images={activity.images} title={activity.title} />
           }
 
           <div className="activityPage-sidebar">
