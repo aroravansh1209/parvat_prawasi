@@ -20,10 +20,10 @@ export default function ActivityPage({ params }) {
 
   const navigate = useNavigate();
   const { activityId } = useParams();
-  const [activity, setActivity] = useState({});
+  const [activity, setActivity] = useState([]);
 
-  const data = {
-    id: 'scuba-1',
+  const data = [{
+    id: 'para-3',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
@@ -43,13 +43,15 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+  },
+  {
     id: 'scuba-2',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -70,13 +72,15 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+  },
+  {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -97,13 +101,15 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+  },
+  {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -124,13 +130,15 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+  },
+  {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -151,13 +159,15 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+  },
+  {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -178,14 +188,14 @@ export default function ActivityPage({ params }) {
       'Safety briefing',
       'Insurance coverage',
     ],
-    includes: [
+    actincludes: [
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
-  };
+  }];
 
   const reviews = [
     {
@@ -233,7 +243,8 @@ export default function ActivityPage({ params }) {
   ];
 
   useEffect(()=>{
-    const res = data.find((item)=>item.id == activityId)
+    const res = data.find((item)=>item.id === activityId)
+    console.log(res)
     setActivity(res)
   },[])
 
@@ -335,7 +346,9 @@ export default function ActivityPage({ params }) {
             </div>
           </div>
 
-          <ActivityImageSection images={activity.images} title={activity.title} />
+          {
+            activity.length ? <ActivityImageSection images={activity.images} title={activity.title} /> : ''
+          }
 
           <div className="activityPage-sidebar">
           <div className="activityPage-card">
@@ -370,16 +383,16 @@ export default function ActivityPage({ params }) {
               <div>
                 <h3 className="activityPage-restrictions-title">Restrictions</h3>
                 <ul className="activityPage-restrictions-list">
-                  {activity.restrictions.map((restriction, index) => (
+                  {activity.restrictions && activity.restrictions.map((restriction, index) => (
                     <li key={index}>{restriction}</li>
                   ))}
                 </ul>
               </div>
             </div>
             <div className="activityPage-tab-content">
-              <ul className="activityPage-includes-list">
-                {activity.includes.map((item, index) => (
-                  <li key={index} className="activityPage-includes-item">
+              <ul className="activityPage-actincludes-list">
+                {activity.actincludes && activity.actincludes.map((item, index) => (
+                  <li key={index} className="activityPage-actincludes-item">
                     <Shield className="activityPage-shield-icon" />
                     {item}
                   </li>
@@ -388,7 +401,7 @@ export default function ActivityPage({ params }) {
             </div>
             <div className="activityPage-tab-content">
               <ul className="activityPage-safety-list">
-                {activity.safetyMeasures.map((measure, index) => (
+                {activity.safetyMeasures && activity.safetyMeasures.map((measure, index) => (
                   <li key={index} className="activityPage-safety-item">
                     <Shield className="activityPage-shield-icon" />
                     {measure}
