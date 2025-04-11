@@ -1,6 +1,6 @@
-import React, { act } from 'react';
+import React, { act, useEffect, useState } from 'react';
 import { Clock, MapPin, Star, Shield } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom'; // For regular React Router
+import { Link, useNavigate, useParams } from 'react-router-dom'; // For regular React Router
 import '../../Styles/ActivityPage.css'; // Updated path for regular CSS
 import { ActivityImageSection } from './ActivityImageSection';
 import { ActivityReview } from './ActivityReview';
@@ -19,8 +19,10 @@ import activity6 from "../../assets/Activity6.webp";
 export default function ActivityPage({ params }) {
 
   const navigate = useNavigate();
+  const { activityId } = useParams();
+  const [activity, setActivity] = useState({});
 
-  const activity = {
+  const data = {
     id: 'scuba-1',
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
@@ -229,6 +231,11 @@ export default function ActivityPage({ params }) {
       price: 1000,
     },
   ];
+
+  useEffect(()=>{
+    const res = data.find((item)=>item.id == activityId)
+    setActivity(res)
+  },[])
 
   const loadScript = async (url) => {
       return new Promise((resolve) => {
