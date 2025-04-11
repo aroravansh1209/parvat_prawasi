@@ -14,7 +14,7 @@ export function ActivityImageSection({ images, title }) {
           className="activityImageSection-mainImage"
         />
       </div>
-      <div className="activityImageSection-thumbnails">
+      {/* <div className="activityImageSection-thumbnails">
         {images.map((image, index) => (
           <button
             key={index}
@@ -30,7 +30,7 @@ export function ActivityImageSection({ images, title }) {
             />
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
