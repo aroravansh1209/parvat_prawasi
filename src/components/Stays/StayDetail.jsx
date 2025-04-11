@@ -29,7 +29,7 @@ const stays = [
       "Airport Shuttle",
       "24/7 Front Desk",
     ],
-    images: [
+    image: [
       "/Stay1.webp",
       "/Stay2.webp",
       "/Stay3.webp",
@@ -107,13 +107,13 @@ export default function StayDetailPage() {
         <div className="StayDetails-image-gallery">
           <div className="StayDetails-main-image">
             <img
-              src={stay.images[selectedImage] || "/placeholder.svg"}
+              src={stay.image[selectedImage] || "/placeholder.svg"}
               alt={`${stay.name} view ${selectedImage + 1}`}
               className="StayDetails-image"
             />
           </div>
           <div className="StayDetails-thumbnail-gallery">
-            {stay.images.map((image, index) => (
+            {stay.image.map((image, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedImage(index)}

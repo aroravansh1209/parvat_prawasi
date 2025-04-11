@@ -96,9 +96,9 @@ export default function CarRentalPage() {
           <div className="car-main-content">
             <h2 className="car-subtitle">Choose Your Car</h2>
             <div className="car-cards">
-              <CarCard name="Thar" description="Your Perfect Ride Awaits – Rent a Thar Today!" imageSrc={Vechile1} />
-              <CarCard name="Maruti Suzuki Jimny" description="Rent the Maruti Suzuki Jimny – Compact, Fun, and Ready to Go." imageSrc={Vechile2} />
-              <CarCard name="Gypsy" description="Unleash the Ride, Anytime, Anywhere." imageSrc={Vechile3} />
+              <CarCard name="Thar" description="Your Perfect Ride Awaits – Rent a Thar Today!" imagerc={Vechile1} />
+              <CarCard name="Maruti Suzuki Jimny" description="Rent the Maruti Suzuki Jimny – Compact, Fun, and Ready to Go." imagerc={Vechile2} />
+              <CarCard name="Gypsy" description="Unleash the Ride, Anytime, Anywhere." imagerc={Vechile3} />
             </div>
 
             <div className="car-terms">
@@ -163,11 +163,11 @@ export default function CarRentalPage() {
   );
 }
 
-function CarCard({ name, description, imageSrc }) {
+function CarCard({ name, description, imagerc }) {
   return (
     <div className="car-card">
       <div className="car-card-content">
-        <img src={imageSrc || "/placeholder.svg"} alt={name} className="car-image" />
+        <img src={imagerc || "/placeholder.svg"} alt={name} className="car-image" />
         <h3 className="car-card-name">{name}</h3>
         <p className="car-card-description">{description}</p>
       </div>

@@ -2,9 +2,9 @@
     "destinations": [
       {
         "id": "beach-bliss",
-        "name": "Goa",
-        "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
-        "image": "/goapackage.jpg",
+        "name": "Himachal",
+        "description": "Village Explorer",
+        "image": "/village.jpg",
         "rating": 5,
         "currentPrice": 5999,
         "originalPrice": 8000,
@@ -36,9 +36,9 @@
       },
       {
         "id": "cultural-explorer",
-        "name": "Goa",
-        "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
-        "image": "/goapackage.jpg",
+        "name": "Himachal",
+        "description": "Kurfi Trek",
+        "image": "/Kurfi.webp",
         "rating": 5,
         "currentPrice": 5999,
         "originalPrice": 8000,
@@ -70,8 +70,8 @@
       },
       {
         "id": "adventure-seeker",
-        "name": "Goa",
-        "description": "Goa is a state in western India with coastlines stretching along the Arabian Sea.",
+        "name": "Himachal",
+        "description": "Fugni Trek",
         "image": "/goapackage.jpg",
         "rating": 5,
         "currentPrice": 5999,

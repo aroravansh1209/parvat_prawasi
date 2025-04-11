@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { act } from 'react';
 import { Clock, MapPin, Star, Shield } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom'; // For regular React Router
 import '../../Styles/ActivityPage.css'; // Updated path for regular CSS
 import { ActivityImageSection } from './ActivityImageSection';
 import { ActivityReview } from './ActivityReview';
-import { ActivityRelatedActivities } from './ActivityRelatedActivities';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import logo from "../../assets/logo.jpeg";
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../config';
-
+import activity1 from "../../assets/Activity1.webp";
+import activity2 from "../../assets/Activity2.jpg";
+import activity3 from "../../assets/Activity3.jpeg";
+import activity4 from "../../assets/Activity4.jpeg";
+import activity5 from "../../assets/Activity5.webp";
+import activity6 from "../../assets/Activity6.webp";
 
 export default function ActivityPage({ params }) {
 
@@ -21,15 +25,15 @@ export default function ActivityPage({ params }) {
     title: 'Grand Island Scuba Diving with Free Videography',
     description:
       'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
-    image: '/Stay1.webp',
-    images: ['/Stay1.webp', '/Stay2.webp', '/Stay3.webp'],
+    image: activity1,
+    images: [activity1],
     discount: 25,
     rating: 4.9,
     reviews: 554,
-    duration: 8,
-    persons: 2,
-    price: 1500,
-    originalPrice: 2000,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
     category: 'Scuba Diving',
     safetyMeasures: [
       'Certified instructors',
@@ -38,16 +42,144 @@ export default function ActivityPage({ params }) {
       'Insurance coverage',
     ],
     includes: [
-      'Professional instructor',
-      'Scuba gear',
       'Underwater photos',
       'Transport',
       'Refreshments',
     ],
-    schedule: [
-      { startTime: '07:00', endTime: '15:00', availability: 8 },
-      { startTime: '09:00', endTime: '17:00', availability: 6 },
-      { startTime: '11:00', endTime: '19:00', availability: 4 },
+    location: 'Grand Island, Goa',
+    restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+    id: 'scuba-2',
+    title: 'Grand Island Scuba Diving with Free Videography',
+    description:
+      'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
+    image: activity2,
+    images: [activity2],
+    discount: 25,
+    rating: 4.9,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+    category: 'Scuba Diving',
+    safetyMeasures: [
+      'Certified instructors',
+      'Quality equipment',
+      'Safety briefing',
+      'Insurance coverage',
+    ],
+    includes: [
+      'Underwater photos',
+      'Transport',
+      'Refreshments',
+    ],
+    location: 'Grand Island, Goa',
+    restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+    id: 'scuba-1',
+    title: 'Grand Island Scuba Diving with Free Videography',
+    description:
+      'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
+    image: activity1,
+    images: [activity1],
+    discount: 25,
+    rating: 4.9,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+    category: 'Scuba Diving',
+    safetyMeasures: [
+      'Certified instructors',
+      'Quality equipment',
+      'Safety briefing',
+      'Insurance coverage',
+    ],
+    includes: [
+      'Underwater photos',
+      'Transport',
+      'Refreshments',
+    ],
+    location: 'Grand Island, Goa',
+    restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+    id: 'scuba-1',
+    title: 'Grand Island Scuba Diving with Free Videography',
+    description:
+      'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
+    image: activity1,
+    images: [activity1],
+    discount: 25,
+    rating: 4.9,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+    category: 'Scuba Diving',
+    safetyMeasures: [
+      'Certified instructors',
+      'Quality equipment',
+      'Safety briefing',
+      'Insurance coverage',
+    ],
+    includes: [
+      'Underwater photos',
+      'Transport',
+      'Refreshments',
+    ],
+    location: 'Grand Island, Goa',
+    restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+    id: 'scuba-1',
+    title: 'Grand Island Scuba Diving with Free Videography',
+    description:
+      'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
+    image: activity1,
+    images: [activity1],
+    discount: 25,
+    rating: 4.9,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+    category: 'Scuba Diving',
+    safetyMeasures: [
+      'Certified instructors',
+      'Quality equipment',
+      'Safety briefing',
+      'Insurance coverage',
+    ],
+    includes: [
+      'Underwater photos',
+      'Transport',
+      'Refreshments',
+    ],
+    location: 'Grand Island, Goa',
+    restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
+    id: 'scuba-1',
+    title: 'Grand Island Scuba Diving with Free Videography',
+    description:
+      'Experience the underwater world with our professional scuba diving package. Perfect for beginners and experienced divers alike.',
+    image: activity1,
+    images: [activity1],
+    discount: 25,
+    rating: 4.9,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+    category: 'Scuba Diving',
+    safetyMeasures: [
+      'Certified instructors',
+      'Quality equipment',
+      'Safety briefing',
+      'Insurance coverage',
+    ],
+    includes: [
+      'Underwater photos',
+      'Transport',
+      'Refreshments',
     ],
     location: 'Grand Island, Goa',
     restrictions: ['Minimum age: 10 years', 'Good physical condition required', 'No cardiac problems'],
@@ -260,8 +392,6 @@ export default function ActivityPage({ params }) {
           </div>
 
           <ActivityReview reviews={reviews} />
-
-          <ActivityRelatedActivities activities={relatedActivities} />
         </div>
       </div>
     </div>

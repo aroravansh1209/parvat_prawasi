@@ -23,7 +23,7 @@ const stays = [
     price: 15000,
     location: 'Calangute Beach',
     amenities: ['Pool', 'Spa', 'Restaurant', 'Beach Access'],
-    images: ['/Stay1.webp'],
+    image: ['/Stay1.webp'],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const stays = [
     price: 800,
     location: 'Anjuna',
     amenities: ['WiFi', 'Common Kitchen', 'Lounge'],
-    images: ['/Stay2.webp'],
+    image: ['/Stay2.webp'],
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const stays = [
     price: 25000,
     location: 'Vagator',
     amenities: ['Private Pool', 'Kitchen', 'Garden', 'Sea View'],
-    images: ['/Stay3.webp'],
+    image: ['/Stay3.webp'],
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const stays = [
     price: 5000,
     location: 'Panjim',
     amenities: ['Restaurant', 'WiFi', 'Room Service'],
-    images: ['/Stay4.webp'],
+    image: ['/Stay4.webp'],
   },
 ];
 
@@ -146,7 +146,7 @@ export default function Stays() {
               <div key={stay.id} className="stay-card">
                 <div className="stay-card-image-container">
                   <img
-                    src={stay.images[0] || '/placeholder.svg'}
+                    src={stay.image[0] || '/placeholder.svg'}
                     alt={stay.name}
                     className="stay-card-image"
                   />

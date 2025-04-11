@@ -2,7 +2,12 @@ import { Card, CardContent, CardActions, CardMedia, Typography } from "@mui/mate
 import Badge from "@mui/material/Badge";
 import Button from "@mui/material/Button";
 import { Star } from "lucide-react";
-import activity from "../../assets/Activity5.avif";
+import activity1 from "../../assets/Activity1.webp";
+import activity2 from "../../assets/Activity2.jpg";
+import activity3 from "../../assets/Activity3.jpeg";
+import activity4 from "../../assets/Activity4.jpeg";
+import activity5 from "../../assets/Activity5.webp";
+import activity6 from "../../assets/Activity6.webp";
 
 import "../../Styles/Activities.css";
 
@@ -10,15 +15,75 @@ import "../../Styles/Activities.css";
 const activities = [
   {
     id: "para-1",
-    title: "Para Gliding",
-    image: activity,
+    title: "Bungee Jumping",
+    image: activity1,
     discount: 25,
     rating: 4.9,
     reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 3749,
+    originalPrice: 4999,
+  },
+  {
+    id: "para-2",
+    title: "Para Gliding",
+    image: activity2,
+    discount: 15,
+    rating: 4.7,
+    reviews: 554,
+    duration: 3,
+    persons: 1,
+    price: 2199,
+    originalPrice: 2499,
+  },
+  {
+    id: "para-3",
+    title: "Treking",
+    image: activity3,
+    discount: 10,
+    rating: 4.3,
+    reviews: 554,
     duration: 8,
-    persons: 2,
-    price: 1500,
-    originalPrice: 2000,
+    persons: 1,
+    price: 1799,
+    originalPrice: 1999,
+  },
+  {
+    id: "para-4",
+    title: "River Rafting",
+    image: activity4,
+    discount: 5,
+    rating: 4.2,
+    reviews: 554,
+    duration: 4,
+    persons: 1,
+    price: 2999,
+    originalPrice: 3199,
+  },
+  {
+    id: "para-5",
+    title: "Hot Air Baloon",
+    image: activity5,
+    discount: 20,
+    rating: 4.5,
+    reviews: 554,
+    duration: 2,
+    persons: 1,
+    price: 1999,
+    originalPrice: 2499,
+  },
+  {
+    id: "para-6",
+    title: "Camping",
+    image: activity6,
+    discount: 20,
+    rating: 4.7,
+    reviews: 554,
+    duration: 24,
+    persons: 1,
+    price: 3999,
+    originalPrice: 4999,
   },
   // ... more activities
 ];

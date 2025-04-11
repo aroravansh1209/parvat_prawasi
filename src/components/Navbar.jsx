@@ -7,7 +7,6 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../config";
 import { useNavigate } from "react-router-dom";
 
-// Styled Components MUST come before using them
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -63,19 +62,27 @@ const Nav = styled.nav`
 
   .login-button {
     button {
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       cursor: pointer;
-      border-radius: 1rem;
+      border-radius: 1.5rem;
       border: none;
       color: white;
-      background-color: #48cae4;
+      background-color: #6366f1;
       font-size: 1.1rem;
+      font-weight: bold;
       letter-spacing: 0.1rem;
       text-transform: uppercase;
-      transition: 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         background-color: #023e8a;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -156,32 +163,30 @@ export default function Navbar() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        setIsLogedIn(false)
-      }else{
-        setIsLogedIn(true)
+        setIsLogedIn(false);
+      } else {
+        setIsLogedIn(true);
       }
-    })
+    });
 
-    return () => unsubscribe()
-  }, [])
-
+    return () => unsubscribe();
+  }, []);
 
   const handleLogout = async () => {
-    const unsubscribe = onAuthStateChanged(auth,async (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (!user) {
-        navigate('/login')
-      }else{
+        navigate("/login");
+      } else {
         try {
-          await signOut(auth)
-          setIsLogedIn(false)
+          await signOut(auth);
+          setIsLogedIn(false);
           window.location.reload();
         } catch (error) {
-          console.error("Logout Error:", error)
+          console.error("Logout Error:", error);
         }
       }
-    })
-    
-  }
+    });
+  };
 
   return (
     <>
@@ -214,9 +219,9 @@ export default function Navbar() {
           </li>
         </ul>
         <div className="login-button">
-          <button onClick={()=>handleLogout()}>{
-            isLogedIn ? "Log Out" : "Sign In"
-            }</button>
+          <button onClick={handleLogout}>
+            {isLogedIn ? "Log Out" : "Sign In"}
+          </button>
         </div>
       </Nav>
 
@@ -230,11 +235,6 @@ export default function Navbar() {
               Home
             </a>
           </li>
-          {/* <li>
-            <a href="/stays" onClick={() => setNavbarState(false)}>
-              Stays
-            </a>
-          </li> */}
           <li>
             <a href="/rentals" onClick={() => setNavbarState(false)}>
               Vehicle Rentals

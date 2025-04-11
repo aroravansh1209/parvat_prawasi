@@ -96,9 +96,9 @@ export default function BikeRentalPage() {
           <div className="car-main-content">
             <h2 className="car-subtitle">Choose Your Bike</h2>
             <div className="car-cards">
-              <CarCard name="Royal Enfield Himalayan" description="Ride Smart, Enjoy the Journey." imageSrc={Vechile4} />
-              <CarCard name="Royal Enfield Classic 350" description="Ride in Comfort, Experience the City." imageSrc={Vechile5} />
-              <CarCard name="Suzuki Access 125" description="Effortless Rides, Everyday Comfort." imageSrc={Vechile6} />
+              <CarCard name="Royal Enfield Himalayan" description="Ride Smart, Enjoy the Journey." imagerc={Vechile4} />
+              <CarCard name="Royal Enfield Classic 350" description="Ride in Comfort, Experience the City." imagerc={Vechile5} />
+              <CarCard name="Suzuki Access 125" description="Effortless Rides, Everyday Comfort." imagerc={Vechile6} />
             </div>
 
             <div className="car-terms">
@@ -164,11 +164,11 @@ export default function BikeRentalPage() {
   );
 }
 
-function CarCard({ name, description, imageSrc }) {
+function CarCard({ name, description, imagerc }) {
   return (
     <div className="car-card">
       <div className="car-card-content">
-        <img src={imageSrc || "/placeholder.svg"} alt={name} className="car-image" />
+        <img src={imagerc || "/placeholder.svg"} alt={name} className="car-image" />
         <h3 className="car-card-name">{name}</h3>
         <p className="car-card-description">{description}</p>
       </div>

@@ -16,12 +16,12 @@ import Vechile3 from "../../assets/Vechile3.jpg";
 import Vechile4 from "../../assets/Vechile4.webp";
 import Vechile5 from "../../assets/Vechile5.webp";
 import Vechile6 from "../../assets/Vechile6.jpg";
-import Activity1 from "../../assets/Activity1.avif";
-import Activity2 from "../../assets/Activity2.avif";
-import Activity3 from "../../assets/Activity3.avif";
-import Activity4 from "../../assets/Activity4.avif";
-import Activity5 from "../../assets/Activity5.avif";
-import Activity6 from "../../assets/Activity6.avif";
+import Activity1 from "../../assets/Activity1.webp";
+import Activity2 from "../../assets/Activity2.jpg";
+import Activity3 from "../../assets/Activity3.jpeg";
+import Activity4 from "../../assets/Activity4.jpeg";
+import Activity5 from "../../assets/Activity5.webp";
+import Activity6 from "../../assets/Activity6.webp";
 import info1 from "../../assets/info1.png";
 import info2 from "../../assets/info2.png";
 import info3 from "../../assets/info3.png";
@@ -57,11 +57,11 @@ export const data = [
   // "Activities"
   [
     { image: Activity1, title: "Bungee Jumping", subTitle: "Feel the Thrill, Defy Gravity.", info1, info2, info3 },
-    { image: Activity2, title: "Parasailling", subTitle: "Soar High, Embrace the Sky.", info1, info2, info3 },
-    { image: Activity3, title: "Flyboarding", subTitle: "Ride the Waves, Fly Above the Water.", info1, info2, info3 },
-    { image: Activity4, title: "Kayaking", subTitle: "Paddle Through Adventure, Explore the Waters.", info1, info2, info3 },
-    { image: Activity5, title: "Scuba Diving", subTitle: "Dive Deep, Discover a World Beneath the Waves.", info1, info2, info3 },
-    { image: Activity6, title: "Snorkeling", subTitle: "Explore the Underwater World, No Limits", info1, info2, info3 }
+    { image: Activity2, title: "Paragliding", subTitle: "Soar High, Embrace the Sky.", info1, info2, info3 },
+    { image: Activity3, title: "Treking", subTitle: "Adventure through nature.", info1, info2, info3 },
+    { image: Activity4, title: "River Rafting", subTitle: "Paddle Through Adventure, Explore the Waters.", info1, info2, info3 },
+    { image: Activity5, title: "Hot Air Baloon", subTitle: "Experience breathtaking views as you soar through the sky in a hot air balloon.", info1, info2, info3 },
+    { image: Activity6, title: "Camping", subTitle: "Enjoy a serene escape under the stars with nature's tranquility while camping.", info1, info2, info3 }
   ]
 ];
 
